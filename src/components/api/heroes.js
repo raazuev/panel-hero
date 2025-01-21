@@ -10,7 +10,10 @@ export default function handler(req, res) {
   } else if (req.method === 'POST') {
     const newHero = req.body;
     const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+
+    newHero.id = Date.now().toString();
     data.push(newHero);
+
     writeFileSync(filePath, JSON.stringify(data, null, 2));
     res.status(201).json(newHero);
   } else {

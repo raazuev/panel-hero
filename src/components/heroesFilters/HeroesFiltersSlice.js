@@ -5,13 +5,14 @@ const initialState = {
     filters: [],
     filtersLoadingStatus: 'idle',
     activeFilter: 'all'
-}
+};
 
 export const fetchFilters = createAsyncThunk(
     'filters/fetchFilters',
     async () => {
         const { request } = useHttp();
-        return await request('http://localhost:3001/filters');
+        const baseUrl = process.env.REACT_APP_BASE_URL || '';
+        return await request(`${baseUrl}/filters`);
     }
 );
 
@@ -19,33 +20,25 @@ const filtersSlice = createSlice({
     name: 'filters',
     initialState,
     reducers: {
-        // filtersFetching: state => {state.filtersLoadingStatus = 'loading'},
-        // filtersFetched: (state, action) => {
-        //     state.filtersLoadingStatus = 'idle';
-        //     state.filters = action.payload;
-        // },
-        // filtersFetchingError: state => {state.filtersLoadingStatus = 'error'},
         filtersChanged: (state, action) => {
             state.activeFilter = action.payload;
         },
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchFilters.pending, state => {state.filtersLoadingStatus = 'loading'})
+            .addCase(fetchFilters.pending, state => { state.filtersLoadingStatus = 'loading'; })
             .addCase(fetchFilters.fulfilled, (state, action) => {
                 state.filtersLoadingStatus = 'idle';
                 state.filters = action.payload;
             })
-            .addCase(fetchFilters.rejected, state => {state.filtersLoadingStatus = 'error'})
+            .addCase(fetchFilters.rejected, (state, action) => {
+                state.filtersLoadingStatus = 'error';
+                console.error('Error fetching filters:', action.error.message);
+            });
     }
 });
 
-const {actions, reducer} = filtersSlice;
+const { actions, reducer } = filtersSlice;
 
 export default reducer;
-export const {
-    filtersFetching,
-    filtersFetched,
-    filtersFetchingError,
-    filtersChanged
-} = actions;
+export const { filtersChanged } = actions;
