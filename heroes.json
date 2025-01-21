@@ -1,0 +1,117 @@
+{
+  "heroes": [
+    {
+      "id": "cba2a7b2-bdc0-4ad5-a50b-20727a571f57",
+      "name": "Антон Разуев",
+      "description": "gf",
+      "element": "fire",
+      "music": {
+        "category": "rap",
+        "id": "dad66f18-04d5-44cf-9f16-1071fefaf659",
+        "tracks": [
+          {
+            "name": "Boulevar",
+            "url": "/assets/music/Boulevar.mp3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9f24014a-545f-4238-ad8a-0341297363b2",
+      "name": "Anton",
+      "description": "hgh",
+      "element": "wind",
+      "music": {
+        "category": "pop",
+        "id": "59f85ab6-4de6-4846-9277-19df79772402",
+        "tracks": [
+          {
+            "name": "Polo",
+            "url": "/assets/music/Polo.mp3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3fa83d53-7b71-4b75-a12f-e148826ed67e",
+      "name": "gfdgdfhg",
+      "description": "hggh",
+      "element": "earth",
+      "music": {
+        "category": "Asenssia",
+        "id": "6faba57a-8569-4d11-8a09-eb2bd679bf39",
+        "tracks": [
+          {
+            "name": "Asenssia",
+            "url": "/assets/music/Asenssia.mp3"
+          }
+        ]
+      }
+    }
+  ],
+  "filters": [
+    {
+      "name": "all",
+      "label": "Все",
+      "className": "btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "label": "Огонь",
+      "className": "btn-danger"
+    },
+    {
+      "name": "water",
+      "label": "Вода",
+      "className": "btn-primary"
+    },
+    {
+      "name": "wind",
+      "label": "Ветер",
+      "className": "btn-success"
+    },
+    {
+      "name": "earth",
+      "label": "Земля",
+      "className": "btn-secondary"
+    }
+  ],
+  "music": [
+    {
+      "name": "rap",
+      "label": "Рэп",
+      "className": "rap",
+      "id": "uuid-generated-id-here",
+      "tracks": [
+        {
+          "name": "Boulevar",
+          "url": "/assets/music/Boulevar.mp3"
+        }
+      ]
+    },
+    {
+      "name": "pop",
+      "label": "Поп",
+      "className": "pop",
+      "id": "another-uuid-generated-id-here",
+      "tracks": [
+        {
+          "name": "Polo",
+          "url": "/assets/music/Polo.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Asenssia",
+      "label": "Asen",
+      "className": "Asen",
+      "id": "yet-another-uuid-generated-id-here",
+      "tracks": [
+        {
+          "name": "Asenssia",
+          "url": "/assets/music/Asenssia.mp3"
+        }
+      ]
+    }
+  ]
+}

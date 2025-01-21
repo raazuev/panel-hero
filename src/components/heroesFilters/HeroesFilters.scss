@@ -1,0 +1,19 @@
+.card-text {
+    font-size: 30px;
+}
+.btn-group {
+    display: flex !important;
+}
+.btn.active {
+    background-color: green !important;
+}
+.btn-primary.active {
+    background-color: blue !important;
+}
+.btn-danger.active {
+    background-color: red !important;
+}
+.btn {
+    color: black !important;
+    background-color: #FFF !important;
+}
